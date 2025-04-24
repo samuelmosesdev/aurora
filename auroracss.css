@@ -18,7 +18,7 @@ header {
 .logo-space {
   flex: 1 1 150px;
   display: flex;
-  align-items: center;
+  align-items: left;
   justify-content: center;
 }
 
