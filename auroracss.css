@@ -23,8 +23,12 @@ header {
 }
 
 .logo {
-  max-width: 300;
-  max-height: 300;
+  display: block;
+  margin: 0 auto; /* centers the logo */
+  width: 200px;   /* adjust as needed */
+  height: auto;   /* maintains aspect ratio */
+  max-width: 100%;
+  filter: drop-shadow(0 0 10px rgba(0, 255, 0, 0.6)); /* optional glow effect */
 }
 
 .menu {
