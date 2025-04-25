@@ -23,8 +23,8 @@ header {
 }
 
 .logo {
-  max-width: auto;
-  max-height: auto;
+  max-width: 300;
+  max-height: 300;
 }
 
 .menu {
