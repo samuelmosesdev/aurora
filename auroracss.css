@@ -2,7 +2,7 @@
   --primary-color: #132B23;
   --accent-color: #DE8649;
   --light-color: #D6DE85;
-  --white: #ffffff;
+  --white: #dcdfbb;
   --font-weight-bold: 700;
 }
 
@@ -21,28 +21,26 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 1rem 2rem;
-  background-color: rgba(255, 255, 255, 0.8);
+  background-color: rgba(252, 223, 61, 0.8);
 }
 
 .logo-space {
   flex: 1 1 150px;
   display: flex;
-  align-items: center; /* Center vertically */
-  justify-content: flex-start; /* Align logo to the left */
+  align-items: left;
+  justify-content: center;
 }
 
 .logo {
-  width: 250px; /* Make logo bigger */
+  display: block;
+  margin: 0 auto;
+  width: 300px;
+  height: auto;
   max-width: 100%;
-  height: auto; /* Maintain aspect ratio */
-  filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.3)); /* Subtle dark glow */
+  position: left;
+  
 }
-@media (max-width: 768px) {
-  .logo {
-    width: 180px; /* Slightly smaller logo on small screens */
-    max-height: 80px;
-  }
-}
+
 /* Navigation */
 .nav {
   position: relative;
@@ -199,9 +197,7 @@ footer a {
   font-weight: var(--font-weight-bold);
   transition: color 0.3s ease;
 }
-.social-links a i {
-  margin-right: 6px;
-}
+
 footer a:hover {
   color: var(--primary-color);
   text-decoration: underline;
