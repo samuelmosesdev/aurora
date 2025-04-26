@@ -1,8 +1,8 @@
 body {
   margin: 0;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: linear-gradient(to right, #D6DE85, #ffffff); /* Light green to white */
-  color: #132B23; /* Dark green for body text */
+  background: #ffffff; /* Solid white background */
+  color: #132B23; /* Default text color */
   text-align: left;
 }
 
@@ -28,7 +28,7 @@ header {
   width: 200px;
   height: auto;
   max-width: 100%;
-  filter: drop-shadow(0 0 10px rgba(222, 134, 73, 0.6)); /* Glow matches orange */
+  filter: drop-shadow(0 0 10px rgba(222, 134, 73, 0.6));
 }
 
 .menu {
@@ -43,39 +43,38 @@ header {
 
 .menu a {
   text-decoration: none;
-  color: #DE8649; /* Orange for links */
+  color: #DE8649; /* Orange for menu links */
   font-weight: bold;
 }
 
 .hero {
   padding: 3rem 1rem;
-  background: rgba(255, 255, 255, 0.3);
+  background: rgba(214, 222, 133, 0.3); /* slight light green tint */
 }
 
 .hero h1 {
   font-size: 2.5rem;
-  color: #132B23; /* Heading dark green */
+  color: #132B23;
 }
 
 .hero p {
   color: #132B23;
 }
 
+/* Boxes (About, Projects, Gallery) */
 .section {
   padding: 2rem;
-  background-color: rgba(255, 255, 255, 0.7);
+  background-color: #132B23; /* Dark green background */
   margin: 1rem auto;
   border-radius: 10px;
   max-width: 900px;
   text-align: left;
+  color: #ffffff; /* White text */
 }
 
-.section h2, .section p, .section ul {
+.section h2, .section p, .section ul, .section li {
   text-align: left;
-}
-
-.section h2 {
-  color: #132B23;
+  color: #ffffff; /* Ensure all text inside boxes is white */
 }
 
 .gallery-grid {
@@ -160,7 +159,6 @@ footer a:hover {
   display: none;
 }
 
-/* Responsive menu layout */
 @media (max-width: 768px) {
   .menu {
     display: none;
