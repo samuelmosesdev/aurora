@@ -1,8 +1,13 @@
 body {
   margin: 0;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Hubot Sans", sans-serif; /* Using Hubot Sans from Google Fonts */
+  font-optical-sizing: auto;
+  font-weight: 400; /* You can adjust the weight later if needed */
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100;
   background: #ffffff; /* Solid white background */
-  color: #132B23; /* Default text color */
+  color: #132B23;
   text-align: left;
 }
 
