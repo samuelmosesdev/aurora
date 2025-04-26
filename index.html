@@ -5,11 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Aurora Learning Support Initiative</title>
 
-  <!-- Google Fonts for Hubot Sans -->
+  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Hubot+Sans:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
 
+  <!-- Main CSS -->
   <link rel="stylesheet" href="auroracss.css">
 </head>
 <body>
@@ -17,6 +18,7 @@
     <div class="logo-space"> 
       <img src="aurora logo.png" alt="aurora logo" class="logo">
     </div>
+
     <nav class="nav">
       <input type="checkbox" id="menu-toggle">
       <label for="menu-toggle" class="menu-icon">&#9776;</label>
@@ -28,19 +30,19 @@
     </nav>
   </header>
 
-  <section class="hero">
+  <section class="hero fade-in">
     <div class="hero-text">
       <h1>Empowering Every Child</h1>
       <p>Creating inclusive and supportive learning environments for all children.</p>
     </div>
   </section>
 
-  <section id="about" class="section">
+  <section id="about" class="section fade-in">
     <h2>About Aurora</h2>
     <p>We are committed to supporting children with special needs in low-income communities through education, advocacy, and teacher empowerment.</p>
   </section>
 
-  <section id="projects" class="section">
+  <section id="projects" class="section fade-in">
     <h2>Our Projects</h2>
     <ul>
       <li>Teacher training programs</li>
@@ -49,7 +51,7 @@
     </ul>
   </section>
 
-  <section id="gallery" class="section gallery">
+  <section id="gallery" class="section gallery fade-in">
     <h2>Gallery</h2>
     <div class="gallery-grid">
       <img src="64328bbaa7d08d25c4a488b33aa50dcf.jpg" alt="Gallery Image 1">
@@ -58,7 +60,7 @@
     </div>
   </section>
 
-  <footer>
+  <footer class="fade-in">
     <p>Contact us:</p>
     <p>+234 806 444 1943, +234 708 767 4669</p>
     <p>
@@ -66,6 +68,30 @@
       <a href="tel:+2349031820053">Call</a>
     </p>
   </footer>
+
+  <!-- Scroll Animation Script -->
+  <script>
+    const faders = document.querySelectorAll('.fade-in');
+
+    const appearOptions = {
+      threshold: 0.2
+    };
+
+    const appearOnScroll = new IntersectionObserver(function(entries, appearOnScroll) {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) {
+          return;
+        } else {
+          entry.target.classList.add('visible');
+          appearOnScroll.unobserve(entry.target);
+        }
+      });
+    }, appearOptions);
+
+    faders.forEach(fader => {
+      appearOnScroll.observe(fader);
+    });
+  </script>
 
 </body>
 </html>
