@@ -1,8 +1,8 @@
 body {
   margin: 0;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: linear-gradient(to right, #ffffff, #eaffea); /* Soft white to very light green */
-  color: #222;
+  background: linear-gradient(to right, #D6DE85, #ffffff); /* Light green to white */
+  color: #132B23; /* Dark green for body text */
   text-align: left;
 }
 
@@ -15,15 +15,10 @@ header {
   background-color: rgba(255, 255, 255, 0.8);
 }
 
-.tagesschrift-regular {
-  font-family: "Tagesschrift", system-ui;
-  font-weight: 400;
-  font-style: normal;
-}
 .logo-space {
   flex: 1 1 150px;
   display: flex;
-  align-items: center; /* left align inside flex */
+  align-items: center;
   justify-content: center;
 }
 
@@ -33,7 +28,7 @@ header {
   width: 200px;
   height: auto;
   max-width: 100%;
-  filter: drop-shadow(0 0 10px rgba(0, 255, 0, 0.6));
+  filter: drop-shadow(0 0 10px rgba(222, 134, 73, 0.6)); /* Glow matches orange */
 }
 
 .menu {
@@ -48,7 +43,7 @@ header {
 
 .menu a {
   text-decoration: none;
-  color: #035c6e;
+  color: #DE8649; /* Orange for links */
   font-weight: bold;
 }
 
@@ -59,7 +54,11 @@ header {
 
 .hero h1 {
   font-size: 2.5rem;
-  color: #035c6e;
+  color: #132B23; /* Heading dark green */
+}
+
+.hero p {
+  color: #132B23;
 }
 
 .section {
@@ -73,6 +72,10 @@ header {
 
 .section h2, .section p, .section ul {
   text-align: left;
+}
+
+.section h2 {
+  color: #132B23;
 }
 
 .gallery-grid {
@@ -92,11 +95,12 @@ header {
 footer {
   text-align: left;
   padding: 1rem;
-  background-color: rgba(255, 255, 255, 0.6);
+  background-color: #D6DE85;
+  color: #132B23;
 }
 
 footer a {
-  color: #035c6e;
+  color: #DE8649;
   text-decoration: none;
   font-weight: bold;
 }
@@ -149,7 +153,7 @@ footer a:hover {
   font-size: 2rem;
   cursor: pointer;
   padding: 0.5rem;
-  color: #035c6e;
+  color: #DE8649;
 }
 
 #menu-toggle {
