@@ -181,4 +181,4 @@ footer a:hover {
   #menu-toggle:checked + .menu-icon + .menu {
     display: flex;
   }
-}
+    }
