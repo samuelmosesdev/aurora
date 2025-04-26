@@ -1,16 +1,20 @@
+:root {
+  --primary-color: #132B23;
+  --accent-color: #DE8649;
+  --light-color: #D6DE85;
+  --white: #ffffff;
+  --font-weight-bold: 700;
+}
+
 body {
   margin: 0;
-  font-family: "Hubot Sans", sans-serif; /* Using Hubot Sans from Google Fonts */
-  font-optical-sizing: auto;
-  font-weight: 400; /* You can adjust the weight later if needed */
-  font-style: normal;
-  font-variation-settings:
-    "wdth" 100;
-  background: #ffffff; /* Solid white background */
-  color: #132B23;
+  font-family: "Hubot Sans", sans-serif;
+  background: var(--white);
+  color: #222;
   text-align: left;
 }
 
+/* Header */
 header {
   display: flex;
   flex-wrap: wrap;
@@ -23,7 +27,7 @@ header {
 .logo-space {
   flex: 1 1 150px;
   display: flex;
-  align-items: center;
+  align-items: left;
   justify-content: center;
 }
 
@@ -33,7 +37,15 @@ header {
   width: 200px;
   height: auto;
   max-width: 100%;
-  filter: drop-shadow(0 0 10px rgba(222, 134, 73, 0.6));
+  filter: drop-shadow(0 0 10px rgba(0, 255, 0, 0.6));
+}
+
+/* Navigation */
+.nav {
+  position: relative;
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
 }
 
 .menu {
@@ -48,72 +60,28 @@ header {
 
 .menu a {
   text-decoration: none;
-  color: #DE8649; /* Orange for menu links */
-  font-weight: bold;
+  color: var(--accent-color);
+  font-weight: var(--font-weight-bold);
+  transition: color 0.3s ease;
 }
 
-.hero {
-  padding: 3rem 1rem;
-  background: rgba(214, 222, 133, 0.3); /* slight light green tint */
+.menu a:hover {
+  color: var(--primary-color);
 }
 
-.hero h1 {
-  font-size: 2.5rem;
-  color: #132B23;
+/* Hamburger Menu */
+.menu-icon {
+  display: none;
+  font-size: 2rem;
+  cursor: pointer;
+  padding: 0.5rem;
+  color: var(--accent-color);
 }
 
-.hero p {
-  color: #132B23;
+#menu-toggle {
+  display: none;
 }
 
-/* Boxes (About, Projects, Gallery) */
-.section {
-  padding: 2rem;
-  background-color: #132B23; /* Dark green background */
-  margin: 1rem auto;
-  border-radius: 10px;
-  max-width: 900px;
-  text-align: left;
-  color: #ffffff; /* White text */
-}
-
-.section h2, .section p, .section ul, .section li {
-  text-align: left;
-  color: #ffffff; /* Ensure all text inside boxes is white */
-}
-
-.gallery-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 1rem;
-  justify-items: center;
-}
-
-.gallery-grid img {
-  width: 100%;
-  border-radius: 10px;
-  object-fit: cover;
-  max-width: 400px;
-}
-
-footer {
-  text-align: left;
-  padding: 1rem;
-  background-color: #D6DE85;
-  color: #132B23;
-}
-
-footer a {
-  color: #DE8649;
-  text-decoration: none;
-  font-weight: bold;
-}
-
-footer a:hover {
-  text-decoration: underline;
-}
-
-/* Responsive tweaks */
 @media (max-width: 768px) {
   header {
     flex-direction: column;
@@ -124,6 +92,24 @@ footer a:hover {
     flex-direction: column;
     align-items: center;
     gap: 0.8rem;
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: rgba(255, 255, 255, 0.95);
+    border-radius: 0 0 10px 10px;
+    width: 200px;
+    padding: 1rem;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    z-index: 1000;
+  }
+
+  #menu-toggle:checked + .menu-icon + .menu {
+    display: flex;
+  }
+
+  .menu-icon {
+    display: block;
   }
 
   .hero h1 {
@@ -144,46 +130,86 @@ footer a:hover {
   }
 }
 
-/* Hamburger Menu Toggle */
-.nav {
-  position: relative;
-  flex: 1;
-  display: flex;
-  justify-content: flex-end;
+/* Hero Section */
+.hero {
+  padding: 3rem 1rem;
+  background: rgba(214, 222, 133, 0.3);
 }
 
-.menu-icon {
-  display: none;
-  font-size: 2rem;
-  cursor: pointer;
-  padding: 0.5rem;
-  color: #DE8649;
+.hero h1 {
+  font-size: 2.5rem;
+  color: var(--primary-color);
 }
 
-#menu-toggle {
-  display: none;
+/* Section Boxes */
+.section {
+  padding: 2rem;
+  background-color: var(--primary-color);
+  margin: 1rem auto;
+  border-radius: 10px;
+  max-width: 900px;
+  color: var(--white);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-@media (max-width: 768px) {
-  .menu {
-    display: none;
-    flex-direction: column;
-    position: absolute;
-    top: 100%;
-    right: 0;
-    background-color: rgba(255, 255, 255, 0.95);
-    border-radius: 0 0 10px 10px;
-    width: 200px;
-    padding: 1rem;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    z-index: 1000;
-  }
+/* Hover effect on sections */
+.section:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(19, 43, 35, 0.4);
+}
 
-  .menu-icon {
-    display: block;
-  }
+.section h2, .section p, .section ul {
+  text-align: left;
+}
 
-  #menu-toggle:checked + .menu-icon + .menu {
-    display: flex;
-  }
-    }
+/* Gallery Grid */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+  justify-items: center;
+}
+
+.gallery-grid img {
+  width: 100%;
+  border-radius: 10px;
+  object-fit: cover;
+  max-width: 400px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery-grid img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 1rem;
+  background-color: rgba(255, 255, 255, 0.6);
+}
+
+footer a {
+  color: var(--accent-color);
+  text-decoration: none;
+  font-weight: var(--font-weight-bold);
+  transition: color 0.3s ease;
+}
+
+footer a:hover {
+  color: var(--primary-color);
+  text-decoration: underline;
+}
+
+/* Scroll Animations */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
