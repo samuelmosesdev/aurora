@@ -27,19 +27,22 @@ header {
 .logo-space {
   flex: 1 1 150px;
   display: flex;
-  align-items: left;
-  justify-content: center;
+  align-items: center; /* Center vertically */
+  justify-content: flex-start; /* Align logo to the left */
 }
 
 .logo {
-  display: block;
-  margin: 0 auto;
-  width: 200px;
-  height: auto;
+  width: 250px; /* Make logo bigger */
   max-width: 100%;
-  filter: drop-shadow(0 0 10px rgba(0, 255, 0, 0.6));
+  height: auto; /* Maintain aspect ratio */
+  filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.3)); /* Subtle dark glow */
 }
-
+@media (max-width: 768px) {
+  .logo {
+    width: 180px; /* Slightly smaller logo on small screens */
+    max-height: 80px;
+  }
+}
 /* Navigation */
 .nav {
   position: relative;
